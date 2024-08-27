@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.LingyangxuqiuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.LingyangxuqiuEntity" id="lingyangxuqiuMap">
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="chongwuleixing" column="chongwuleixing"/>
+        <result property="lingyangmude" column="lingyangmude"/>
+        <result property="lingyangqiwang" column="lingyangqiwang"/>
+        <result property="fabushijian" column="fabushijian"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.LingyangxuqiuView" >
+
+		SELECT  lingyangxuqiu.* FROM lingyangxuqiu  lingyangxuqiu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.LingyangxuqiuView" >
+		SELECT * FROM lingyangxuqiu  lingyangxuqiu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
